@@ -72,7 +72,7 @@ const WorkshopPage: React.FC = () => {
           >
             מפסיקים לחלום, מתחילים לקנות:
             <br />
-            <span className="text-gold">נדל״ן ב-90 יום</span> 🏠
+            <span className="text-gold">סודות הנדל״ן</span> 🏠
           </motion.h1>
 
           <motion.p
