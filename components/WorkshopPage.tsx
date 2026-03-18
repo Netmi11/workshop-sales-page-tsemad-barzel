@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  AlertTriangle, TrendingUp, Shield, Users, Target,
-  BookOpen, Zap, Clock, CheckCircle, Star, ArrowDown
+  Shield, Users, Target,
+  Compass, Heart, Clock, CheckCircle, Star, ArrowDown
 } from 'lucide-react';
 import { WORKSHOP_TIERS, WORKSHOP_MAX_SPOTS } from '../constants';
 import WorkshopOrderForm from './WorkshopOrderForm';
@@ -17,34 +17,19 @@ const fadeUp = {
 
 const VALUE_CARDS = [
   {
-    icon: AlertTriangle,
-    title: 'טעויות שעולות הון',
-    desc: 'נלמד לזהות את 5 הטעויות הנפוצות שרוב המשקיעים עושים — ואיך להימנע מהן.',
+    icon: Compass,
+    title: 'ביטחון בדרך',
+    desc: 'נהפוך את המושגים המורכבים לתוכנית עבודה פשוטה וממוקדת עבורכם.',
   },
   {
-    icon: TrendingUp,
-    title: 'ניתוח עסקאות בזמן אמת',
-    desc: 'תתרגלו לנתח עסקאות אמיתיות מהשוק ולהבין אם הן משתלמות.',
-  },
-  {
-    icon: Shield,
-    title: 'הגנה משפטית',
-    desc: 'מה חייב להיות בחוזה שלכם ואילו סעיפים מגנים עליכם באמת.',
+    icon: Heart,
+    title: 'שקט נפשי',
+    desc: 'תלמדו איך לבחור את "נבחרת החלומות" שלכם (עו"ד, שמאי, מתווך) ולעבור את התהליך בלי טעויות יקרות.',
   },
   {
     icon: Target,
-    title: 'איתור הזדמנויות',
-    desc: 'איך למצוא נכסים מתחת למחיר השוק לפני כולם.',
-  },
-  {
-    icon: BookOpen,
-    title: 'מימון חכם',
-    desc: 'אסטרטגיות מימון שיאפשרו לכם להתחיל גם עם הון עצמי נמוך.',
-  },
-  {
-    icon: Zap,
-    title: 'אסטרטגיית יציאה',
-    desc: 'מתי למכור, מתי להחזיק, ואיך למקסם את הרווח בכל תרחיש.',
+    title: 'דיוק מקסימלי',
+    desc: 'נלמד אתכם איך לסנן את הרעש ולמצוא את העסקה שתפורה למידות שלכם.',
   },
 ];
 
@@ -85,9 +70,9 @@ const WorkshopPage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight"
           >
-            <span className="text-gold">סודות הנדל"ן</span>
+            מפסיקים לחלום, מתחילים לקנות:
             <br />
-            שרוב המשקיעים לא מכירים
+            <span className="text-gold">נדל״ן ב-90 יום</span> 🏠
           </motion.h1>
 
           <motion.p
@@ -96,7 +81,7 @@ const WorkshopPage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto leading-relaxed"
           >
-            סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> — הכלים, השיטות והטעויות שחייבים להכיר לפני שנכנסים לעסקת נדל"ן.
+            סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> — תוכנית עבודה ברורה לרכישת נדל״ן תוך 90 יום.
           </motion.p>
 
           <motion.div
@@ -154,11 +139,11 @@ const WorkshopPage: React.FC = () => {
               תוכן הסדנה
             </motion.p>
             <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-5xl font-black">
-              מה תלמדו בסדנה?
+              מה אתם הולכים ללמוד?
             </motion.h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {VALUE_CARDS.map((card, i) => (
               <motion.div
                 key={card.title}
@@ -197,86 +182,83 @@ const WorkshopPage: React.FC = () => {
             </motion.h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {WORKSHOP_TIERS.map((tier, i) => (
-              <motion.div
-                key={tier.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-30px' }}
-                variants={fadeUp}
-                custom={i}
-                className={`relative rounded-2xl p-8 text-right transition-all ${
-                  tier.highlighted
-                    ? 'bg-gradient-to-b from-gold/20 to-gold/5 border-2 border-gold shadow-xl shadow-gold/10 scale-105'
-                    : 'bg-white/5 border border-white/10'
-                }`}
-              >
-                {tier.badge && (
-                  <span className="absolute -top-3 right-6 bg-gold text-navy text-xs font-black px-4 py-1 rounded-full">
-                    {tier.badge}
-                  </span>
-                )}
-                <h3 className="text-xl font-bold mb-2">{tier.name}</h3>
-                <p className="text-white/50 text-sm mb-5">{tier.description}</p>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-gold font-black text-4xl font-inter">{tier.price}&#8362;</span>
-                  {tier.originalPrice && (
-                    <span className="text-white/30 line-through text-lg font-inter">{tier.originalPrice}&#8362;</span>
-                  )}
-                </div>
-                <ul className="space-y-3 mb-6">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-white/70 text-sm">
-                      <CheckCircle size={16} className="text-gold flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#order"
-                  className={`block text-center py-3 rounded-xl font-bold transition-all ${
-                    tier.highlighted
-                      ? 'bg-gold text-navy hover:brightness-110'
-                      : 'bg-white/10 text-white hover:bg-white/20'
-                  }`}
-                >
-                  בחרו מסלול זה
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ORDER FORM ── */}
-      <section id="order" className="py-10 md:py-14 px-6" style={{ backgroundColor: '#0a1929' }}>
-        <div className="max-w-3xl mx-auto">
+          {/* Main pricing card */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="text-center mb-10"
+            viewport={{ once: true, margin: '-30px' }}
+            variants={fadeUp}
+            custom={0}
+            className="max-w-2xl mx-auto"
           >
-            <motion.p variants={fadeUp} custom={0} className="text-gold font-bold text-sm tracking-widest uppercase mb-3">
-              הרשמה
-            </motion.p>
-            <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-5xl font-black mb-4">
-              שריינו את המקום שלכם
-            </motion.h2>
-            <motion.p variants={fadeUp} custom={2} className="text-white/50">
-              מלאו את הפרטים ונציג שלנו ייצור איתכם קשר לסיום ההרשמה
-            </motion.p>
-          </motion.div>
+            <div className="relative bg-gradient-to-b from-gold/20 to-gold/5 border-2 border-gold rounded-3xl p-10 md:p-14 text-center shadow-xl shadow-gold/10">
+              <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-navy text-sm font-black px-6 py-1.5 rounded-full">
+                במיוחד לעמותת ההולכים בראש
+              </span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12"
-          >
-            <WorkshopOrderForm />
+              <p className="text-white/50 text-lg mb-2">המחיר הרגיל של הסדנה</p>
+              <p className="text-white/30 line-through text-4xl font-black font-inter mb-6">970&#8362;</p>
+
+              <p className="text-gold font-bold text-xl mb-2">עכשיו במיוחד לעמותת ההולכים בראש</p>
+              <p className="text-gold font-black text-7xl md:text-8xl font-inter mb-2">370&#8362;</p>
+              <p className="text-white/40 text-sm mb-8">חיסכון של 600&#8362;</p>
+
+              <ul className="space-y-3 mb-10 text-right max-w-sm mx-auto">
+                <li className="flex items-center gap-3 text-white/70">
+                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
+                  גישה מלאה לסדנה
+                </li>
+                <li className="flex items-center gap-3 text-white/70">
+                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
+                  חוברת עבודה דיגיטלית
+                </li>
+                <li className="flex items-center gap-3 text-white/70">
+                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
+                  קבוצת וואטסאפ בוגרים
+                </li>
+                <li className="flex items-center gap-3 text-white/70">
+                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
+                  שיחת ייעוץ אישית 1-על-1
+                </li>
+              </ul>
+
+              <a
+                href="#order"
+                className="inline-block bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-xl shadow-gold/20"
+              >
+                אני רוצה להירשם — 370&#8362;
+              </a>
+            </div>
+
+            {/* Couples option */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-30px' }}
+              variants={fadeUp}
+              custom={1}
+              className="mt-6 bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6"
+            >
+              <div className="text-right">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users size={20} className="text-gold" />
+                  <h3 className="text-xl font-bold">באים בזוג? 1+1</h3>
+                </div>
+                <p className="text-white/50">שני כרטיסים במחיר מיוחד — כולל את כל ההטבות</p>
+              </div>
+              <div className="flex items-center gap-4 flex-shrink-0">
+                <div className="text-left">
+                  <span className="text-white/30 line-through text-sm font-inter">1,940&#8362;</span>
+                  <p className="text-gold font-black text-3xl font-inter">590&#8362;</p>
+                </div>
+                <a
+                  href="#order"
+                  className="bg-white/10 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/20 transition-all"
+                >
+                  בחרו זוגי
+                </a>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
