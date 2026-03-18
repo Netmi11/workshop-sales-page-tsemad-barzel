@@ -4,8 +4,7 @@ import {
   Shield, Users, Target,
   Compass, Heart, Clock, CheckCircle, Star, ArrowDown
 } from 'lucide-react';
-import { WORKSHOP_TIERS, WORKSHOP_MAX_SPOTS } from '../constants';
-import WorkshopOrderForm from './WorkshopOrderForm';
+import { WORKSHOP_MAX_SPOTS } from '../constants';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -223,7 +222,9 @@ const WorkshopPage: React.FC = () => {
               </ul>
 
               <a
-                href="#order"
+                href="https://app.upay.co.il/API6/s.php?m=WGRFSFY1MS9aeXRZK1ljNWErcmFrdz09"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-xl shadow-gold/20"
               >
                 אני רוצה להירשם — 370&#8362;
@@ -252,7 +253,9 @@ const WorkshopPage: React.FC = () => {
                   <p className="text-gold font-black text-3xl font-inter">590&#8362;</p>
                 </div>
                 <a
-                  href="#order"
+                  href="https://app.upay.co.il/API6/s.php?m=SjdHcXFmdXBXNi9NbEJyMDFHT3FDUT09"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-white/10 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/20 transition-all"
                 >
                   בחרו זוגי
