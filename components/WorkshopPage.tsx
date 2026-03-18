@@ -83,25 +83,6 @@ const WorkshopPage: React.FC = () => {
             סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> — תוכנית עבודה ברורה לרכישת נדל״ן תוך 90 יום.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="#order"
-              className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-xl shadow-gold/20 flex items-center gap-3"
-            >
-              שריינו לי מקום
-              <ArrowDown size={22} />
-            </a>
-            <div className="flex items-center gap-2 text-white/50 text-sm">
-              <Shield size={16} />
-              <span>100% אחריות — לא נהנית? כסף חזרה</span>
-            </div>
-          </motion.div>
-
           {/* Trust indicators */}
           <motion.div
             initial={{ opacity: 0 }}
