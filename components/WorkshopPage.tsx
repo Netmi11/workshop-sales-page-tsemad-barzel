@@ -42,6 +42,13 @@ const WorkshopPage: React.FC = () => {
           background: 'linear-gradient(180deg, #0a1929 0%, #0d2137 50%, #0d2137 100%)',
         }}
       >
+        {/* Logo top-right */}
+        <img
+          src="/assets/logo-gold.png"
+          alt="צמד ברזל"
+          className="absolute top-6 right-6 md:top-8 md:right-8 w-20 md:w-28 z-20"
+        />
+
         {/* Subtle grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -60,7 +67,7 @@ const WorkshopPage: React.FC = () => {
             className="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-5 py-2 rounded-full text-sm font-bold border border-red-500/30"
           >
             <Clock size={16} className="animate-pulse" />
-            <span>נותרו {WORKSHOP_MAX_SPOTS} מקומות בלבד</span>
+            <span>ההרשמה מוגבלת ל-{WORKSHOP_MAX_SPOTS} הנרשמים הראשונים בלבד</span>
           </motion.div>
 
           <motion.h1
@@ -69,19 +76,36 @@ const WorkshopPage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight"
           >
-            מפסיקים לחלום, מתחילים לקנות:
-            <br />
-            <span className="text-gold">סודות הנדל״ן</span> 🏠
+            <span className="text-gold">מפת הדרכים לעסקה הנכונה</span>🏡
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-2xl md:text-3xl text-white font-bold"
+          >
+            החלום מתקרב…🤫
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed"
           >
             סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> — תוכנית עבודה ברורה לרכישת נדל״ן תוך 90 יום.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="inline-flex items-center gap-2 bg-gold/10 text-gold px-6 py-3 rounded-full text-lg font-bold border border-gold/30"
+          >
+            <span>📅</span>
+            <span>17.4.2026</span>
+          </motion.div>
 
         </div>
       </section>
@@ -185,9 +209,9 @@ const WorkshopPage: React.FC = () => {
               <div className="text-right">
                 <div className="flex items-center gap-2 mb-2">
                   <Users size={20} className="text-gold" />
-                  <h3 className="text-xl font-bold">באים בזוג? 1+1</h3>
+                  <h3 className="text-xl font-bold">באים כצמד?</h3>
                 </div>
-                <p className="text-white/50">שני כרטיסים במחיר מיוחד — כולל את כל ההטבות</p>
+                <p className="text-white/50">הנחה למי שבא עם ״צמד הברזל״ שלו</p>
               </div>
               <div className="flex items-center gap-4 flex-shrink-0">
                 <div className="text-left">
@@ -214,11 +238,11 @@ const WorkshopPage: React.FC = () => {
           <div className="grid grid-cols-3 gap-6">
             <div>
               <p className="text-gold font-black text-3xl md:text-4xl font-inter">100+</p>
-              <p className="text-white/50 text-sm mt-1">עסקאות מוצלחות</p>
+              <p className="text-white/50 text-sm mt-1">לקוחות מרוצים</p>
             </div>
             <div>
               <p className="text-gold font-black text-3xl md:text-4xl font-inter">75+</p>
-              <p className="text-white/50 text-sm mt-1">לקוחות מרוצים</p>
+              <p className="text-white/50 text-sm mt-1">עסקאות מוצלחות</p>
             </div>
             <div>
               <p className="text-gold font-black text-3xl md:text-4xl font-inter">5+</p>
