@@ -83,26 +83,6 @@ const WorkshopPage: React.FC = () => {
             סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> — תוכנית עבודה ברורה לרכישת נדל״ן תוך 90 יום.
           </motion.p>
 
-          {/* Trust indicators */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex items-center justify-center gap-8 pt-6 text-white/40 text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <Users size={16} />
-              <span>100+ בוגרים</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Star size={16} />
-              <span>4.9 דירוג</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle size={16} />
-              <span>5 שנות ניסיון</span>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -183,25 +163,6 @@ const WorkshopPage: React.FC = () => {
               <p className="text-gold font-black text-7xl md:text-8xl font-inter mb-2">370&#8362;</p>
               <p className="text-white/40 text-sm mb-8">חיסכון של 600&#8362;</p>
 
-              <ul className="space-y-3 mb-10 text-right max-w-sm mx-auto">
-                <li className="flex items-center gap-3 text-white/70">
-                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
-                  גישה מלאה לסדנה
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
-                  חוברת עבודה דיגיטלית
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
-                  קבוצת וואטסאפ בוגרים
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <CheckCircle size={18} className="text-gold flex-shrink-0" />
-                  שיחת ייעוץ אישית 1-על-1
-                </li>
-              </ul>
-
               <a
                 href="https://app.upay.co.il/API6/s.php?m=WGRFSFY1MS9aeXRZK1ljNWErcmFrdz09"
                 target="_blank"
@@ -264,14 +225,6 @@ const WorkshopPage: React.FC = () => {
               <p className="text-white/50 text-sm mt-1">שנות ניסיון</p>
             </div>
           </div>
-
-          <a
-            href="#order"
-            className="inline-flex items-center gap-3 bg-gold text-navy px-10 py-5 rounded-2xl font-black text-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-xl shadow-gold/20"
-          >
-            שריינו לי מקום עכשיו
-            <ArrowDown size={22} />
-          </a>
 
           <p className="text-white/30 text-sm">
             &copy; {new Date().getFullYear()} צמד ברזל — כל הזכויות שמורות
