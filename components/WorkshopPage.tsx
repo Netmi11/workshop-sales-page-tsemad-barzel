@@ -4,7 +4,6 @@ import {
   Shield, Users, Target,
   Compass, Heart, Clock, CheckCircle, Star, ArrowDown
 } from 'lucide-react';
-import { WORKSHOP_MAX_SPOTS } from '../constants';
 import logoGold from '../assets/logo-gold.png';
 
 const fadeUp = {
@@ -68,7 +67,7 @@ const WorkshopPage: React.FC = () => {
             className="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-5 py-2 rounded-full text-sm font-bold border border-red-500/30"
           >
             <Clock size={16} className="animate-pulse" />
-            <span>ההרשמה מוגבלת ל-{WORKSHOP_MAX_SPOTS} הנרשמים הראשונים בלבד</span>
+            <span>מספר המקומות מוגבל</span>
           </motion.div>
 
           <motion.h1
@@ -95,7 +94,7 @@ const WorkshopPage: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="text-xl md:text-2xl text-white max-w-2xl mx-auto leading-relaxed"
           >
-            סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> — תוכנית עבודה ברורה לרכישת נדל״ן תוך 90 יום.
+            סדנה מעשית וממוקדת של <span className="text-gold font-bold">צמד ברזל</span> – תוכנית עבודה ברורה לרכישת נדל״ן תוך 90 יום.
           </motion.p>
 
           <motion.div
@@ -105,7 +104,7 @@ const WorkshopPage: React.FC = () => {
             className="inline-flex items-center gap-2 bg-gold/10 text-gold px-6 py-3 rounded-full text-lg font-bold border border-gold/30"
           >
             <span>📅</span>
-            <span>17.4.2026</span>
+            <span>17.4.2026 | 10:00-14:00 | עזריאלי שרונה</span>
           </motion.div>
 
         </div>
@@ -124,7 +123,7 @@ const WorkshopPage: React.FC = () => {
               תוכן הסדנה
             </motion.p>
             <motion.h2 variants={fadeUp} custom={1} className="text-3xl md:text-5xl font-black">
-              מה אתם הולכים ללמוד?
+              מה אתם הולכים לקבל מהסדנה?
             </motion.h2>
           </motion.div>
 
@@ -212,7 +211,7 @@ const WorkshopPage: React.FC = () => {
                   <Users size={20} className="text-gold" />
                   <h3 className="text-xl font-bold">באים כצמד?</h3>
                 </div>
-                <p className="text-white/50">הנחה למי שבא עם ״צמד הברזל״ שלו</p>
+                <p className="text-white/50">הנחה נוספת למי שבא עם ״צמד הברזל״ שלו</p>
               </div>
               <div className="flex items-center gap-4 flex-shrink-0">
                 <div className="text-left">
