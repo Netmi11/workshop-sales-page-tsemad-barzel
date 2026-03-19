@@ -188,7 +188,7 @@ const WorkshopPage: React.FC = () => {
               <p className="text-white/40 text-sm mb-8">חיסכון של 600&#8362;</p>
 
               <a
-                href="https://app.upay.co.il/API6/s.php?m=WGRFSFY1MS9aeXRZK1ljNWErcmFrdz09"
+                href="https://app.upay.co.il/API6/s.php?m=Z1Y2WU9yZVR6QktEZ2ZyVjhkYWh5UT09"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-xl shadow-gold/20"
@@ -219,7 +219,7 @@ const WorkshopPage: React.FC = () => {
                   <p className="text-gold font-black text-3xl font-inter">590&#8362;</p>
                 </div>
                 <a
-                  href="https://app.upay.co.il/API6/s.php?m=SjdHcXFmdXBXNi9NbEJyMDFHT3FDUT09"
+                  href="https://app.upay.co.il/API6/s.php?m=VkxnY0dxZ2pJcCtXaVBQbFA0cEl2Zz09"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/10 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/20 transition-all"
