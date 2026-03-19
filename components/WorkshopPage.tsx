@@ -5,6 +5,7 @@ import {
   Compass, Heart, Clock, CheckCircle, Star, ArrowDown
 } from 'lucide-react';
 import { WORKSHOP_MAX_SPOTS } from '../constants';
+import logoGold from '../assets/logo-gold.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -44,7 +45,7 @@ const WorkshopPage: React.FC = () => {
       >
         {/* Logo top-right */}
         <img
-          src="/assets/logo-gold.png"
+          src={logoGold}
           alt="צמד ברזל"
           className="absolute top-6 right-6 md:top-8 md:right-8 w-20 md:w-28 z-20"
         />
